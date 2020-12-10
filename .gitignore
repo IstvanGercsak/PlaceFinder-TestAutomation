@@ -6,3 +6,6 @@ driver
 
 # Project exclude paths
 /target/
+
+# Log folder and log file
+logs
