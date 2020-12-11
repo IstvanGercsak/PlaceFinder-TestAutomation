@@ -4,6 +4,7 @@ import PlaceFinder.DriverFactory.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -22,8 +23,11 @@ public class LandingPageTest extends LandingPagePOM {
     }
 
     @Test
-    public void test() {
-
+    public void contactMeButtonIsVisibleAndClickable() {
+        Assert.assertEquals(driver.getCurrentUrl(), landingPageURL);
+        contactMeIconCSS(driver).isDisplayed();
+        contactMeIconCSS(driver).isEnabled();
+        Assert.assertEquals(contactMeIconCSS(driver).getAttribute("href"), contactMeIconHref);
     }
 
     @AfterMethod
