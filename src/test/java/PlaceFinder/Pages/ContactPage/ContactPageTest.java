@@ -5,16 +5,18 @@ import PlaceFinder.Pages.LandingPage.LandingPageTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ContactPageTest {
+public class ContactPageTest extends ContactPageTestPOM {
 
     WebDriver driver = new DriverFactory().driver;
     DriverFactory driverFactory = new DriverFactory();
     Logger logger = LogManager.getLogger(LandingPageTest.class);
+    LandingPageTest landingPage = new LandingPageTest();
 
     @Parameters({"browser", "headless"})
     @BeforeMethod
@@ -23,8 +25,9 @@ public class ContactPageTest {
     }
 
     @Test
-    public void test(){
-
+    public void navigateToTheContactPage() {
+        landingPage.contactMeIconCSS(driver).click();
+        Assert.assertEquals(driver.getCurrentUrl(), contactPageURL);
     }
 
     @AfterMethod
