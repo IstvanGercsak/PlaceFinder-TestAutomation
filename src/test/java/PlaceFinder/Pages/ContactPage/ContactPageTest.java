@@ -30,6 +30,15 @@ public class ContactPageTest extends ContactPageTestPOM {
         Assert.assertEquals(driver.getCurrentUrl(), contactPageURL);
     }
 
+    @Test
+    public void goBackToTheLandingPage() {
+        landingPage.contactMeIconCSS(driver).click();
+        goBackIconCSS(driver).isEnabled();
+        goBackIconCSS(driver).isDisplayed();
+        Assert.assertEquals(goBackIconCSS(driver).getAttribute("href"), goBackIconHref);
+        goBackIconCSS(driver).click();
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
