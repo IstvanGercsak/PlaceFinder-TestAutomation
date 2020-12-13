@@ -29,4 +29,35 @@ public class LandingPagePOM {
         return driver.findElement(By.cssSelector(contactMeIconCSS));
     }
 
+    public WebElement inputID(WebDriver driver) {
+        return driver.findElement(By.id(inputID));
+    }
+
+    public WebElement museumButtonID(WebDriver driver) {
+        return driver.findElement(By.id(museumButtonID));
+    }
+
+    public WebElement restaurantButtonID(WebDriver driver) {
+        return driver.findElement(By.id(restaurantButtonID));
+    }
+
+    public WebElement barButtonID(WebDriver driver) {
+        return driver.findElement(By.id(barButtonID));
+    }
+
+    public WebElement moreResultButtonID(WebDriver driver) {
+        return driver.findElement(By.id(moreResultButtonID));
+    }
+
+    public WebElement resetSearchButtonID(WebDriver driver) {
+        return driver.findElement(By.id(resetSearchButtonID));
+    }
+
+    public WebElement githubIconCSS(WebDriver driver) {
+        return driver.findElement(By.cssSelector(githubIconCSS));
+    }
+
+    public WebElement linkedinIconCSS(WebDriver driver) {
+        return driver.findElement(By.cssSelector(linkedinIconCSS));
+    }
 }

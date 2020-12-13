@@ -30,6 +30,19 @@ public class LandingPageTest extends LandingPagePOM {
         Assert.assertEquals(contactMeIconCSS(driver).getAttribute("href"), contactMeIconHref);
     }
 
+    @Test
+    public void socialLinksAreVisibleAndHaveTheRightHref() {
+        // Github Icon
+        githubIconCSS(driver).isDisplayed();
+        githubIconCSS(driver).isEnabled();
+        Assert.assertEquals(githubIconCSS(driver).getAttribute("href"), githubIconHref);
+
+        // Linkedin Icon
+        linkedinIconCSS(driver).isEnabled();
+        linkedinIconCSS(driver).isDisplayed();
+        Assert.assertEquals(linkedinIconCSS(driver).getAttribute("href"), linkedinIconHref);
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
