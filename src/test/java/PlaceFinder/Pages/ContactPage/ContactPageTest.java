@@ -39,6 +39,20 @@ public class ContactPageTest extends ContactPageTestPOM {
         goBackIconCSS(driver).click();
     }
 
+    @Test
+    public void socialLinksAreVisibleAndHaveTheRightHref() {
+        landingPage.contactMeIconCSS(driver).click();
+        // Github Icon
+        githubIconCSS(driver).isDisplayed();
+        githubIconCSS(driver).isEnabled();
+        Assert.assertEquals(githubIconCSS(driver).getAttribute("href"), githubIconHref);
+
+        // Linkedin Icon
+        linkedinIconCSS(driver).isEnabled();
+        linkedinIconCSS(driver).isDisplayed();
+        Assert.assertEquals(linkedinIconCSS(driver).getAttribute("href"), linkedinIconHref);
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
