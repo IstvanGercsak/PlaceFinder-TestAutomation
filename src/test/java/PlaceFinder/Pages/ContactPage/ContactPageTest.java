@@ -76,6 +76,10 @@ public class ContactPageTest extends ContactPageTestPOM {
         messageInputID(driver).isDisplayed();
         messageInputID(driver).isEnabled();
         messageInputID(driver).sendKeys("istvan.gercsak@test.com");
+
+        // Submit button
+        sendMessageButtonCSS(driver).isEnabled();
+        sendMessageButtonCSS(driver).isDisplayed();
     }
 
     @AfterMethod
