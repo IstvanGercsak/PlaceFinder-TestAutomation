@@ -53,6 +53,31 @@ public class ContactPageTest extends ContactPageTestPOM {
         Assert.assertEquals(linkedinIconCSS(driver).getAttribute("href"), linkedinIconHref);
     }
 
+    @Test
+    public void formTest() {
+        landingPage.contactMeIconCSS(driver).click();
+
+        // Name input
+        nameInputID(driver).isDisplayed();
+        nameInputID(driver).isEnabled();
+        nameInputID(driver).sendKeys("Test Name");
+
+        // Email input
+        nameInputEmailID(driver).isDisplayed();
+        nameInputEmailID(driver).isEnabled();
+        nameInputEmailID(driver).sendKeys("istvan.gercsak@test.com");
+
+        // Phone number input
+        phoneNumberID(driver).isDisplayed();
+        phoneNumberID(driver).isEnabled();
+        phoneNumberID(driver).sendKeys("123456789");
+
+        // Message input
+        messageInputID(driver).isDisplayed();
+        messageInputID(driver).isEnabled();
+        messageInputID(driver).sendKeys("istvan.gercsak@test.com");
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
