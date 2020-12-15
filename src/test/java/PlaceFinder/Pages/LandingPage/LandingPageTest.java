@@ -43,6 +43,31 @@ public class LandingPageTest extends LandingPagePOM {
         Assert.assertEquals(linkedinIconCSS(driver).getAttribute("href"), linkedinIconHref);
     }
 
+    @Test
+    public void interestButtonsAreVisibleAndClickable() {
+        museumButtonID(driver).isDisplayed();
+        museumButtonID(driver).isEnabled();
+
+        restaurantButtonID(driver).isEnabled();
+        restaurantButtonID(driver).isDisplayed();
+
+        barButtonID(driver).isEnabled();
+        barButtonID(driver).isDisplayed();
+    }
+
+    @Test
+    public void inputFieldIsUsable() {
+        inputID(driver).click();
+        inputID(driver).clear();
+        inputID(driver).sendKeys("Dublin");
+        museumButtonID(driver).click();
+
+        moreResultButtonID(driver).isEnabled();
+        moreResultButtonID(driver).isDisplayed();
+        resetSearchButtonID(driver).isEnabled();
+        resetSearchButtonID(driver).isDisplayed();
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
