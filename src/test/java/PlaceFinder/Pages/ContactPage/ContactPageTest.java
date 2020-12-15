@@ -58,21 +58,25 @@ public class ContactPageTest extends ContactPageTestPOM {
         landingPage.contactMeIconCSS(driver).click();
 
         // Name input
+        nameInputID(driver).clear();
         nameInputID(driver).isDisplayed();
         nameInputID(driver).isEnabled();
         nameInputID(driver).sendKeys("Test Name");
 
         // Email input
+        nameInputEmailID(driver).clear();
         nameInputEmailID(driver).isDisplayed();
         nameInputEmailID(driver).isEnabled();
         nameInputEmailID(driver).sendKeys("istvan.gercsak@test.com");
 
         // Phone number input
+        phoneNumberID(driver).clear();
         phoneNumberID(driver).isDisplayed();
         phoneNumberID(driver).isEnabled();
         phoneNumberID(driver).sendKeys("123456789");
 
         // Message input
+        messageInputID(driver).clear();
         messageInputID(driver).isDisplayed();
         messageInputID(driver).isEnabled();
         messageInputID(driver).sendKeys("istvan.gercsak@test.com");

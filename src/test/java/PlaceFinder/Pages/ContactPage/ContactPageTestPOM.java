@@ -42,7 +42,7 @@ public class ContactPageTestPOM {
     }
 
     WebElement sendMessageButtonCSS(WebDriver driver) {
-        return driver.findElement(By.id(sendMessageButtonCSS));
+        return driver.findElement(By.cssSelector(sendMessageButtonCSS));
     }
 
     WebElement githubIconCSS(WebDriver driver) {
